@@ -23,13 +23,10 @@
                 </div>
 
                 <div class="form-row">
-                    <asp:DropDownList ID="ddlCity" runat="server" CssClass="input">
-                        <asp:ListItem Text="Select City" Value="" />
-                        <asp:ListItem Text="Ahmedabad" />
-                        <asp:ListItem Text="Surat" />
-                        <asp:ListItem Text="Vadodara" />
-                        <asp:ListItem Text="Rajkot" />
+                    <asp:DropDownList ID="ddlCity" runat="server" CssClass="input" DataSourceID="SqlDataSource1" DataTextField="DistrictName_" DataValueField="DistrictName_">
                     </asp:DropDownList>
+
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Mycon %>" SelectCommand="SELECT [DistrictName ] AS DistrictName_ FROM [Districts]"></asp:SqlDataSource>
 
                     <asp:DropDownList ID="ddlGender" runat="server" CssClass="input">
                         <asp:ListItem Text="Select Gender" Value="" />
